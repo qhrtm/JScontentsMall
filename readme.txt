@@ -20,3 +20,5 @@ theme/basic/contents
 theme/basic/skin/contents
 contents.config.php
 
+
+g5/commom.php
