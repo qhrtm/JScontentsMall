@@ -1,11 +1,6 @@
 <?php
 include_once('./_common.php');
-
-if( isset($_REQUEST['exe']) && isset($exe) && $exe ){
-    die('bad request');
-}
-
-include('./ipin.config.php');
+include_once('./ipin.config.php');
 
 //아이핀팝업에서 조회한 PERSONALINFO이다.
 @$encPsnlInfo = $_POST["encPsnlInfo"];

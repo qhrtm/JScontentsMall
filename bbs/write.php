@@ -31,8 +31,6 @@ if ($w == 'u' || $w == 'r') {
     }
 }
 
-run_event('bbs_write', $board, $wr_id, $w);
-
 if ($w == '') {
     if ($wr_id) {
         alert('글쓰기에는 \$wr_id 값을 사용하지 않습니다.', G5_BBS_URL.'/board.php?bo_table='.$bo_table);
@@ -312,8 +310,7 @@ if ($w == '') {
     if (!$is_admin) {
         if (!($is_member && $member['mb_id'] === $write['mb_id'])) {
             if (!check_password($wr_password, $write['wr_password'])) {
-                $is_wrong = run_replace('invalid_password', false, 'write', $write);
-                if(!$is_wrong) alert('비밀번호가 틀립니다.');
+                alert('비밀번호가 틀립니다.');
             }
         }
     }
@@ -365,7 +362,7 @@ if (isset($write['wr_subject'])) {
 
 $content = '';
 if ($w == '') {
-    $content = html_purifier($board['bo_insert_content']);
+    $content = $board['bo_insert_content'];
 } else if ($w == 'r') {
     if (!strstr($write['wr_option'], 'html')) {
         $content = "\n\n\n &gt; "

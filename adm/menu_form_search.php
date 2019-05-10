@@ -52,13 +52,13 @@ if($sql) {
 <?php }
         switch($type) {
             case 'group':
-                $link = get_pretty_url(G5_GROUP_DIR, $row['id']);
+                $link = G5_BBS_URL.'/group.php?gr_id='.$row['id'];
                 break;
             case 'board':
-                $link = get_pretty_url($row['id']);
+                $link = G5_BBS_URL.'/board.php?bo_table='.$row['id'];
                 break;
             case 'content':
-                $link = get_pretty_url(G5_CONTENT_DIR, $row['id']);
+                $link = G5_BBS_URL.'/content.php?co_id='.$row['id'];
                 break;
             default:
                 $link = '';

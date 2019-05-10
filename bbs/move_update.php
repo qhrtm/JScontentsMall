@@ -196,10 +196,8 @@ if ($sw == 'move')
 {
     for ($i=0; $i<count($save); $i++)
     {
-        if( isset($save[$i]['bf_file']) && $save[$i]['bf_file'] ){
-            for ($k=0; $k<count($save[$i]['bf_file']); $k++)
-                @unlink($save[$i]['bf_file'][$k]);
-        }
+        for ($k=0; $k<count($save[$i]['bf_file']); $k++)
+            @unlink($save[$i]['bf_file'][$k]);
 
         sql_query(" delete from $write_table where wr_parent = '{$save[$i]['wr_id']}' ");
         sql_query(" delete from {$g5['board_new_table']} where bo_table = '$bo_table' and wr_id = '{$save[$i]['wr_id']}' ");
@@ -209,10 +207,8 @@ if ($sw == 'move')
 }
 
 $msg = '해당 게시물을 선택한 게시판으로 '.$act.' 하였습니다.';
-$opener_href  = get_pretty_url($bo_table,'','&amp;page='.$page.'&amp;'.$qstr);
+$opener_href  = './board.php?bo_table='.$bo_table.'&amp;page='.$page.'&amp;'.$qstr;
 $opener_href1 = str_replace('&amp;', '&', $opener_href);
-
-run_event('bbs_move_update', $bo_table, $chk_bo_table, $wr_id_list, $opener_href);
 
 echo <<<HEREDOC
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
