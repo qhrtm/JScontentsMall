@@ -64,25 +64,6 @@ $ajax_token = md5($tmp_str.$_SERVER['REMOTE_ADDR'].$_SERVER['DOCUMENT_ROOT']);
             <span>가능한 변경하지 마십시오.</span>
         </td>
     </tr>
-    <tr>
-        <th scope="row"><label for="g5_contents_prefix">컨텐츠몰TABLE명 접두사</label></th>
-        <td>
-            <span>가능한 변경하지 마십시오.</span>
-            <input name="g5_contents_prefix" type="text" value="g5_contents_" id="g5_contents_prefix">
-        </td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="g5_install"><?php echo G5_VERSION; ?> 재설치</label></th>
-        <td>
-            <input name="g5_install" type="checkbox" value="1" id="g5_install">재설치
-        </td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="g5_contents_install">컨텐츠몰설치</label></th>
-        <td>
-            <input name="g5_contents_install" type="checkbox" value="1" id="g5_contents_install" checked="checked">설치
-        </td>
-    </tr>
     </tbody>
     </table>
 
